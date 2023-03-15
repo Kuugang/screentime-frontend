@@ -5,7 +5,6 @@ import { getAppsAsync, sortAppName, sortRuntime } from '../redux/AppSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import LoadingSpinner from './LoadingSpinner'
 const Home = ({ socket }) => {
-    console.log(process.env.NODE_ENV);
 
 	const dispatch = useDispatch()
 
