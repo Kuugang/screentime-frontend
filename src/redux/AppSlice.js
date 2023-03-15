@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import NotFound from '../components/NotFound';
 
-const production_url = "https://screentimeproject.herokuapp.com/"
+const production_url = "https://screentime-api.onrender.com"
 console.log(process.env.NODE_ENV);
 const get_api_url = () => {
     if (process.env.NODE_ENV === 'production'){
