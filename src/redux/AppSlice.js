@@ -1,12 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import NotFound from '../components/NotFound';
 
 const production_url = "https://screentime-api.onrender.com"
 console.log(process.env.NODE_ENV);
 const get_api_url = () => {
     if (process.env.NODE_ENV === 'production'){
-        const url = "http://localhost:5000/"
-        return url
+        return production_url
     }else{
         const url = "http://localhost:5000/"
         return url
