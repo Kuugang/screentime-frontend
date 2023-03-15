@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+  --neon-green-color:rgb(100, 255, 218);
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  background-color: rgb(10, 25, 47);
+}
+
+p, h1, h2, h3, a, ul{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color:rgb(178, 211, 236);
+}
+
+.container{
+    padding:0;
+    margin:0;
+}
+
+/* nav & footer styles */
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    left:50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    background-color: rgb(31, 21, 21);
+    border-radius: 12px;
+    border:1px var(--neon-green-color) solid;   
+    box-shadow: 2px 1px 0px 0px var(--neon-green-color);
+    z-index:3;
+}
+nav h1{
+  font-size: 3em;
+}
+nav ul a{
+  color: var(--neon-green-color);
+  font-weight: 300;
+  padding:15px;
+  transition: color 0.4s ease;
+}
+nav a:hover{
+    color: rgb(31, 21, 21);
+    background-color: var(--neon-green-color);
+    border-radius: 12px;
+}
+footer{
+  color: #777;
+  text-align: center;
+  margin: 80px auto 20px;
+}
+.content{
+  position: relative;
+  padding: 50px 100px;
+}
+.content .container{
+  width:100%;
+  margin-top:50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  gap:20px;
+}
+.content .container .card {
+  background: rgb(17,34, 64);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content .container .card:hover{
+  background: rgba(178, 211, 236, 0.3);
+}
+
+.card span{
+  font-size: 20px;
+  color: var(--neon-green-color);
+}
+
+.card p{
+  color: var(--neon-green-color);
+}
+
+.content .container .active{
+  box-shadow: 4px 2px 1px 0px var(--neon-green-color);
+  transition: box-shadow 0.5s;
+}
+
+.about-container{
+  padding:0 30%;
+  margin-top: 20vh;
+}
+
+.about h2{
+  font-size:35px;
+}
+
+.about-description{
+  padding:25px;
+  background: rgb(17,34, 64);
+  position: relative;
+  border: 2px solid var(--neon-green-color);
+  border-radius: 5px;
+} 
+
+.about-description:after{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width:100%;
+  height:100%;
+  display: block;
+  border:2px solid var(--neon-green-color);
+  border-radius: 5px;
+  top:7px;
+  left:7px;
+}
+
+.about-description p{
+  font-size:15px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.about-tech{
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-tech h4{
+  font-weight: 300;
+  color:rgb(178, 211, 236);
+}
+
+.about-plugs{
+  display: flex;
+  justify-content: center;
+}
+
+.about-plugs a{
+  font-size: 25px;
+  margin:0 10px;
+}
+
+.about-plugs a:hover{
+  color:var(--neon-green-color)
+}
+
+.about-email{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Loading */
+.text {
+  color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  letter-spacing:2px;
+  margin-top:20px;
+  color: #3fefef;   filter:drop-shadow(0 0 20px #3fefef) drop-shadow(0 0 60px #3fefef);
+}
+.spinner {
+  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.spinner::before,
+.spinner:after{
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+.spinner:before {
+  width: 100%;
+  height: 100%;
+  background-image:linear-gradient(
+    0deg, var(--neon-green-color) 0%, 
+    rgb(10, 25, 47) 100% );
+  animation: spin .5s infinite linear;
+}
+.spinner:after {
+  width: 85%;
+  height: 85%;
+  background-color: #000000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
