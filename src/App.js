@@ -8,14 +8,17 @@ import Navbar from './components/Navbar';
 import NotFound from './components/NotFound'
 import {io} from "socket.io-client"
 
+
+
 function App() {
+	const production_url = "https://screentime-api.onrender.com"
 
 	const connectToSocket = () => {
 		if (process.env.NODE_ENV === 'development'){
 		  	const socket = io.connect("http://localhost:5000");
 		  return socket
 		}else{
-		  	const socket = io.connect("https://screentimeproject.herokuapp.com/");
+		  	const socket = io.connect(production_url);
 		  return socket
 		}
 	}
