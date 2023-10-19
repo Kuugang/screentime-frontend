@@ -3,6 +3,7 @@
 :root{
   --neon-green-color:rgb(100, 255, 218);
 }
+
 body{
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;

@@ -9,9 +9,8 @@ import NotFound from './components/NotFound'
 import {io} from "socket.io-client"
 
 
-
 function App() {
-	const production_url = "https://screentime-api.onrender.com"
+	const production_url = "https://screentime-backend.vercel.app"
 
 	const connectToSocket = () => {
 		if (process.env.NODE_ENV === 'development'){
