@@ -15,18 +15,23 @@ const Home = ({ socket }) => {
 	}, [dispatch]);
 
     useEffect(() => {
-        socket.on("Runtime Update", (data) => {
-            console.log(socket.id)
-            if (apps){
-                if (apps.length > 1){
-                    dispatch(updateTimeSpan({ apps : apps, new_timespan : data.new_timespan, id : data._id}))
+        const intervalId = setInterval(() => {
+            socket.on("Runtime Update", (data) => {
+                console.log(socket.id);
+                if (apps) {
+                    if (apps.length > 1) {
+                        dispatch(updateTimeSpan({ apps: apps, new_timespan: data.new_timespan, id: data._id }));
+                    }
                 }
-            }
-        });
+            });
+        }, 1000);
+    
         return () => {
+            clearInterval(intervalId);
             socket.removeAllListeners("Runtime Update");
-        }
-    }, [apps])
+        };
+    }, [apps]);
+    
 
 	const handleAppNameSort = () =>{
 		dispatch(sortAppName({ apps : apps}))
