@@ -23,9 +23,9 @@ const Home = ({ socket }) => {
                 }
             }
         });
-        return () => {
-            socket.removeAllListeners("Runtime Update");
-        }
+        // return () => {
+        //     socket.removeAllListeners("Runtime Update");
+        // }
     }, [apps])
 
 	const handleAppNameSort = () =>{
