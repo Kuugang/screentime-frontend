@@ -18,6 +18,7 @@ const Home = ({ socket }) => {
         socket.on("Runtime Update", (data) => {
             if (apps){
                 if (apps.length > 1){
+                    console.log("test")
                     dispatch(updateTimeSpan({ apps : apps, new_timespan : data.new_timespan, id : data._id}))
                 }
             }
