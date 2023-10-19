@@ -16,7 +16,7 @@ const About = () => {
               <h4>Python</h4>
             </div>
             <div className="about-plugs">
-              <a href="https://github.com/jake-bajo69" rel="noopener noreferrer" target = '_blank'>
+              <a href="https://github.com/Kuugang" rel="noopener noreferrer" target = '_blank'>
                 <FiGithub/>
               </a>
               <a href="https://www.facebook.com/kuugang" rel="noopener noreferrer" target = '_blank'>
