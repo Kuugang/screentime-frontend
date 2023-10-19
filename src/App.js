@@ -10,7 +10,7 @@ import {io} from "socket.io-client"
 
 
 function App() {
-	const production_url = "https://screentime-backend.vercel.app"
+	const production_url = "https://screentime.onrender.com"
 
 	const connectToSocket = () => {
 		if (process.env.NODE_ENV === 'development'){
