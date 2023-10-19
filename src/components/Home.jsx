@@ -16,16 +16,16 @@ const Home = ({ socket }) => {
 
     useEffect(() => {
         socket.on("Runtime Update", (data) => {
+            console.log(socket.id)
             if (apps){
                 if (apps.length > 1){
-                    console.log("test")
                     dispatch(updateTimeSpan({ apps : apps, new_timespan : data.new_timespan, id : data._id}))
                 }
             }
         });
-        // return () => {
-        //     socket.removeAllListeners("Runtime Update");
-        // }
+        return () => {
+            socket.removeAllListeners("Runtime Update");
+        }
     }, [apps])
 
 	const handleAppNameSort = () =>{

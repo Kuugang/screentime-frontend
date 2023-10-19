@@ -19,6 +19,7 @@ const AppDetails = ({ socket }) => {
 	}, [dispatch]);
 
     useEffect(() => {
+        // console.log(socket.id)
         socket.on("Runtime Update", (data) => {
             if (appdetails){
                 if (appdetails.length > 1){
